@@ -1,48 +1,47 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Учим русский язык: Месяцы (Падеж 6) и Числа</title>
+<title>Урок русского языка: Месяцы и Числа</title>
 <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #333; max-width: 1000px; margin: 0 auto; padding: 20px; background-color: #f4f7f9; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; }
     h1 { color: #1a73e8; text-align: center; border-bottom: 3px solid #1a73e8; padding-bottom: 10px; }
-    h2 { color: #d93025; border-left: 5px solid #d93025; padding-left: 10px; margin-top: 30px; }
+    h2 { color: #d93025; border-left: 5px solid #d93025; padding-left: 10px; margin-top: 40px; }
     
-    .grid-numbers { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-bottom: 30px; }
-    .card { background: white; padding: 12px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); text-align: center; border: 1px solid #e0e0e0; }
-    .number-label { font-weight: bold; color: #1a73e8; display: block; margin-bottom: 5px; }
+    /* Table Month */
+    .month-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+    .month-table th { background-color: #1a73e8; color: white; padding: 15px; }
+    .month-table td { border: 1px solid #eee; padding: 12px; text-align: left; }
     .accent { color: #d93025; font-weight: bold; }
-
-    table { width: 100%; border-collapse: collapse; background: white; margin-top: 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    th, td { border: 1px solid #eee; padding: 15px; text-align: left; }
-    th { background-color: #1a73e8; color: white; }
-    tr:nth-child(even) { background-color: #f8f9fa; }
     .case-6 { color: #28a745; font-weight: bold; }
 
+    /* Numbers Grid */
+    .numbers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-top: 20px; }
+    .num-card { background: white; padding: 15px; border-radius: 10px; border: 1px solid #dee2e6; text-align: center; transition: 0.3s; }
+    .num-card:hover { transform: translateY(-3px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+    .num-label { font-weight: bold; color: #1a73e8; display: block; font-size: 1.1em; }
+
     /* Game Section */
-    .game-box { background: #ffffff; padding: 25px; border-radius: 15px; border: 2px solid #1a73e8; margin-top: 20px; text-align: center; }
-    .question { font-size: 1.4em; margin-bottom: 20px; }
-    input[type="text"] { padding: 12px; width: 280px; border: 2px solid #ddd; border-radius: 8px; font-size: 1.1em; outline: none; }
-    input[type="text"]:focus { border-color: #1a73e8; }
-    .btn { background: #1a73e8; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1em; margin: 5px; transition: 0.3s; }
-    .btn:hover { background: #1557b0; transform: translateY(-2px); }
+    .game-section { background: #ffffff; padding: 30px; border-radius: 20px; border: 2px solid #1a73e8; margin: 40px 0; text-align: center; }
+    .game-title { font-size: 1.5em; color: #1a73e8; margin-bottom: 20px; font-weight: bold; }
+    .question-box { font-size: 1.3em; margin-bottom: 20px; padding: 20px; background: #e8f0fe; border-radius: 10px; }
+    input[type="text"] { padding: 12px; width: 300px; border: 2px solid #ced4da; border-radius: 8px; font-size: 1.1em; outline: none; }
+    .btn { background: #1a73e8; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1em; margin: 5px; }
+    .btn:hover { background: #1557b0; }
     #feedback { margin-top: 20px; font-size: 1.2em; font-weight: bold; min-height: 30px; }
-    .correct { color: #28a745; }
-    .wrong { color: #d93025; }
 </style>
 </head>
 <body>
 
-    <h1>🇷🇺 Русский язык: Месяцы (Падеж 6) и Числа</h1>
+    <h1>🇷🇺 Изучаем русский язык: Месяцы и Порядковые числа</h1>
 
-    <h2>📅 1. Месяцы и Предложный падеж (Когда?)</h2>
-    <p><i>Используйте предлог <b>"в"</b> + окончание <b>"-е"</b> (или <b>"-и"</b>) для ответа на вопрос "Когда?".</i></p>
-    <table>
+    <h2>📅 1. Месяцы (Падеж 1 и Падеж 6)</h2>
+    <table class="month-table">
         <thead>
             <tr>
                 <th>№</th>
-                <th>Именительный (Cách 1)</th>
-                <th>Предложный (Cách 6: в + ...)</th>
+                <th>Именительный (Кто? Что?)</th>
+                <th>Предложный (Когда? - в + ...)</th>
             </tr>
         </thead>
         <tbody>
@@ -62,79 +61,87 @@
     </table>
 
     <h2>🔢 2. Порядковые числа (1 – 31)</h2>
-    <div class="grid-numbers">
-        <div class="card"><span class="number-label">1-й</span>Пе<span class="accent">´</span>рвый</div>
-        <div class="card"><span class="number-label">2-й</span>Второ<span class="accent">´</span>й</div>
-        <div class="card"><span class="number-label">3-й</span>Тре<span class="accent">´</span>тий</div>
-        <div class="card"><span class="number-label">4-й</span>Четвёртый</div>
-        <div class="card"><span class="number-label">5-й</span>Пя<span class="accent">´</span>тый</div>
-        <div class="card"><span class="number-label">10-й</span>Деся<span class="accent">´</span>тый</div>
-        <div class="card"><span class="number-label">11-й</span>Одинна<span class="accent">´</span>дцатый</div>
-        <div class="card"><span class="number-label">20-й</span>Двадца<span class="accent">´</span>тый</div>
-        <div class="card"><span class="number-label">21-й</span>Два´дцать пе´рвый</div>
-        <div class="card"><span class="number-label">30-й</span>Тридца<span class="accent">´</span>тый</div>
-        <div class="card"><span class="number-label">31-й</span>Три´дцать пе´рвый</div>
+    <div class="numbers-grid">
+        <div class="num-card"><span class="num-label">1-й</span>Пе<span class="accent">´</span>рвый</div>
+        <div class="num-card"><span class="num-label">2-й</span>Второ<span class="accent">´</span>й</div>
+        <div class="num-card"><span class="num-label">3-й</span>Тре<span class="accent">´</span>тий</div>
+        <div class="num-card"><span class="num-label">4-й</span>Четвёртый</div>
+        <div class="num-card"><span class="num-label">5-й</span>Пя<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">6-й</span>Шесто<span class="accent">´</span>й</div>
+        <div class="num-card"><span class="num-label">7-й</span>Седьмо<span class="accent">´</span>й</div>
+        <div class="num-card"><span class="num-label">8-й</span>Восьмо<span class="accent">´</span>й</div>
+        <div class="num-card"><span class="num-label">9-й</span>Девя<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">10-й</span>Деся<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">11-й</span>Одинна<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">12-й</span>Двена<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">13-й</span>Трина<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">14-й</span>Четырна<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">15-й</span>Пятна<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">16-й</span>Шестна<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">17-й</span>Семна<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">18-й</span>Восемна<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">19-й</span>Девятна<span class="accent">´</span>дцатый</div>
+        <div class="num-card"><span class="num-label">20-й</span>Двадца<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">21-й</span>Два´дцать пе´рвый</div>
+        <div class="num-card"><span class="num-label">22-й</span>Два´дцать второ´й</div>
+        <div class="num-card"><span class="num-label">23-й</span>Два´дцать тре´тий</div>
+        <div class="num-card"><span class="num-label">24-й</span>Два´дцать четвёртый</div>
+        <div class="num-card"><span class="num-label">25-й</span>Два´дцать пя´тый</div>
+        <div class="num-card"><span class="num-label">26-й</span>Два´дцать шесто´й</div>
+        <div class="num-card"><span class="num-label">27-й</span>Два´дцать седьмо´й</div>
+        <div class="num-card"><span class="num-label">28-й</span>Два´дцать восьмо´й</div>
+        <div class="num-card"><span class="num-label">29-й</span>Два´дцать девя´тый</div>
+        <div class="num-card"><span class="num-label">30-й</span>Тридца<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">31-й</span>Три´дцать пе´рвый</div>
     </div>
 
-    <h2>🚀 Большие числа</h2>
-    <table>
-        <tr><td>40-й: <b>Сороково<span class="accent">´</span>й</b></td><td>80-й: <b>Восьмидеся<span class="accent">´</span>тый</b></td></tr>
-        <tr><td>50-й: <b>Пятидеся<span class="accent">´</span>тый</b></td><td>90-й: <b>Девяно<span class="accent">´</span>стый</b></td></tr>
-        <tr><td>60-й: <b>Шестидеся<span class="accent">´</span>тый</b></td><td>900-й: <b>Девятисо<span class="accent">´</span>тый</b></td></tr>
-        <tr><td>70-й: <b>Семидеся<span class="accent">´</span>тый</b></td><td>2000-й: <b>Двухты<span class="accent">´</span>сячный</b></td></tr>
-    </table>
-
-    <h2>🎮 Игра: Практика (A2 Level)</h2>
-    <div class="game-box">
-        <div class="question" id="q-text">Когда ваш день рождения? (В каком месяце?)</div>
-        <p id="q-subtext">Напишите месяц в <b>Падеже 6</b> (например: в мае)</p>
-        <input type="text" id="user-input" placeholder="Ваш ответ..." autocomplete="off">
+    <div class="game-section">
+        <div class="game-title">🎮 Игра: Напиши число словами</div>
+        <div class="question-box" id="q-box">Загрузка...</div>
+        <input type="text" id="ans-input" placeholder="Введите слово..." autocomplete="off">
         <br><br>
-        <button class="btn" onclick="checkGame()">Проверить</button>
-        <button class="btn" style="background:#34a853" onclick="newRound()">Новый вопрос</button>
+        <button class="btn" onclick="checkAns()">Проверить</button>
+        <button class="btn" style="background:#28a745" onclick="loadQ()">Следующий вопрос</button>
         <p id="feedback"></p>
     </div>
 
     <script>
-        const monthData = [
-            { c1: "Январь", c6: "в январе" }, { c1: "Февраль", c6: "в феврале" },
-            { c1: "Март", c6: "в марте" }, { c1: "Апрель", c6: "в апреле" },
-            { c1: "Май", c6: "в мае" }, { c1: "Июнь", c6: "в июне" },
-            { c1: "Июль", c6: "в июле" }, { c1: "Август", c6: "в августе" },
-            { c1: "Сентябрь", c6: "в сентябре" }, { c1: "Октябрь", c6: "в октябре" },
-            { c1: "Ноябрь", c6: "в ноябре" }, { c1: "Декабрь", c6: "в декабре" }
-        ];
+        const numbersMap = {
+            1: "первый", 2: "второй", 3: "третий", 4: "четвертый", 5: "пятый", 
+            6: "шестой", 7: "седьмой", 8: "восьмой", 9: "девятый", 10: "десятый",
+            11: "одиннадцатый", 12: "двенадцатый", 20: "двадцатый", 
+            21: "двадцать первый", 25: "двадцать пятый", 30: "тридцатый", 31: "тридцать первый"
+        };
 
-        let currentTarget = "";
-        let mode = "month"; 
+        let currentNum = 1;
 
-        function newRound() {
-            const feedback = document.getElementById('feedback');
-            const qText = document.getElementById('q-text');
-            const qSub = document.getElementById('q-subtext');
-            feedback.innerText = "";
-            document.getElementById('user-input').value = "";
-
-            const rand = Math.floor(Math.random() * monthData.length);
-            currentTarget = monthData[rand].c6;
-            qText.innerText = "Как сказать 'vào tháng " + monthData[rand].c1 + "'?";
-            qSub.innerText = "Используйте Падеж 6 (в + ...)";
+        function loadQ() {
+            const keys = Object.keys(numbersMap);
+            currentNum = keys[Math.floor(Math.random() * keys.length)];
+            document.getElementById('q-box').innerText = "Как будет число " + currentNum + "-й словами?";
+            document.getElementById('ans-input').value = "";
+            document.getElementById('feedback').innerText = "";
         }
 
-        function checkGame() {
-            const val = document.getElementById('user-input').value.toLowerCase().trim();
-            const feedback = document.getElementById('feedback');
+        function checkAns() {
+            let userVal = document.getElementById('ans-input').value.toLowerCase().trim();
+            // Xử lý bỏ dấu trọng âm để kiểm tra dễ hơn
+            userVal = userVal.replace(/а́/g, 'а').replace(/е́/g, 'е').replace(/и́/g, 'и').replace(/о́/g, 'о').replace(/у́/g, 'у').replace(/ы́/g, 'ы').replace(/я́/g, 'я');
             
-            if (val === currentTarget) {
-                feedback.innerText = "✅ Молодец! Правильно.";
-                feedback.className = "correct";
+            const correctVal = numbersMap[currentNum];
+            const feedback = document.getElementById('feedback');
+
+            if (userVal === correctVal) {
+                feedback.innerText = "✅ Правильно! Вы молодец!";
+                feedback.style.color = "#28a745";
             } else {
-                feedback.innerText = "❌ Попробуйте еще раз. Ответ: " + currentTarget;
-                feedback.className = "wrong";
+                feedback.innerText = "❌ Ошибка. Правильный ответ: " + correctVal;
+                feedback.style.color = "#d93025";
             }
         }
-        
-        window.onload = newRound;
+
+        window.onload = loadQ;
     </script>
+
 </body>
 </html>
