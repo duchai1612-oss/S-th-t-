@@ -2,171 +2,128 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Host Panel: Russian Games A2</title>
+<title>Полный урок: Месяцы и Порядковые числа</title>
 <style>
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #333; max-width: 1200px; margin: 0 auto; padding: 20px; background-color: #f0f4f8; }
-    h1 { color: #1a73e8; text-align: center; border-bottom: 4px solid #1a73e8; padding-bottom: 15px; }
-    h2 { color: #d93025; border-left: 6px solid #d93025; padding-left: 15px; margin-top: 40px; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background-color: #f4f7f9; }
+    h1 { color: #1a73e8; text-align: center; border-bottom: 3px solid #1a73e8; padding-bottom: 10px; }
+    h2 { color: #d93025; border-left: 5px solid #d93025; padding-left: 10px; margin-top: 40px; }
     
-    .container { display: flex; gap: 20px; flex-wrap: wrap; }
-    .main-content { flex: 3; min-width: 600px; }
-    .side-panel { flex: 1; min-width: 300px; background: #2c3e50; color: white; padding: 20px; border-radius: 15px; height: fit-content; position: sticky; top: 20px; }
-
-    /* Game UI */
-    .game-card { background: white; padding: 25px; border-radius: 15px; border: 2px solid #1a73e8; margin-bottom: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
-    .q-text { font-size: 1.4em; font-weight: bold; margin-bottom: 15px; display: block; }
-    .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
-    
-    /* Buttons */
-    .btn { padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.2s; margin: 5px; }
-    .btn-blue { background: #1a73e8; color: white; }
-    .btn-green { background: #28a745; color: white; }
-    .btn-option { background: #ecf0f1; color: #2c3e50; border: 1px solid #bdc3c7; }
-    .btn-option:hover { background: #dcdde1; }
-    
-    /* Scoreboard */
-    .score-item { display: flex; justify-content: space-between; align-items: center; background: #34495e; padding: 10px; border-radius: 8px; margin-bottom: 8px; }
-    .score-val { font-size: 1.2em; color: #f1c40f; font-weight: bold; }
+    .month-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
+    .month-table th { background-color: #1a73e8; color: white; padding: 15px; }
+    .month-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
     .accent { color: #d93025; font-weight: bold; }
-    .feedback { font-weight: bold; margin-top: 10px; min-height: 25px; }
+    .case-6 { color: #28a745; font-weight: bold; }
+
+    .numbers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: 20px; }
+    .num-card { background: white; padding: 12px; border-radius: 8px; border: 1px solid #dee2e6; text-align: center; font-size: 0.95em; }
+    .num-label { font-weight: bold; color: #1a73e8; display: block; font-size: 1.1em; }
+
+    .game-section { background: #ffffff; padding: 30px; border-radius: 20px; border: 2px solid #1a73e8; margin: 40px 0; text-align: center; }
+    .question-box { font-size: 1.3em; margin-bottom: 20px; padding: 20px; background: #e8f0fe; border-radius: 10px; min-height: 50px; display: flex; align-items: center; justify-content: center; }
+    input[type="text"] { padding: 12px; width: 320px; border: 2px solid #ced4da; border-radius: 8px; font-size: 1.1em; outline: none; }
+    .btn { background: #1a73e8; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1em; margin: 5px; }
+    .btn:hover { background: #1557b0; }
+    #feedback { margin-top: 20px; font-size: 1.2em; font-weight: bold; min-height: 30px; }
 </style>
 </head>
 <body>
 
-    <h1>🎙️ Панель хоста: Русские Числа и Месяцы</h1>
+    <h1>🇷🇺 Русский язык: Месяцы и Порядковые числа (1-2000)</h1>
 
-    <div class="container">
-        
-        <div class="main-content">
-            
-            <div class="game-card">
-                <span class="q-text">Игра 1: Как это по-русски? (Số thứ tự)</span>
-                <div id="num-q-box" style="font-size: 1.2em; margin-bottom: 10px;">Нажмите "Следующий вопрос"</div>
-                <input type="text" id="num-ans-input" style="padding:10px; width:60%; border-radius:5px; border:1px solid #ccc;" placeholder="Напишите слово...">
-                <br><br>
-                <button class="btn btn-blue" onclick="checkNumAns()">Проверить</button>
-                <button class="btn btn-green" onclick="loadNumQ()">Следующий вопрос</button>
-                <div id="num-feedback" class="feedback"></div>
-            </div>
+    <h2>📅 1. Месяцы (Падеж 6: "Когда?")</h2>
+    <table class="month-table">
+        <thead>
+            <tr><th>№</th><th>Именительный (C1)</th><th>Предложный (C6: в + ...)</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>01</td><td>Янва<span class="accent">´</span>рь</td><td class="case-6">в январе<span class="accent">´</span></td></tr>
+            <tr><td>02</td><td>Февра<span class="accent">´</span>ль</td><td class="case-6">в феврале<span class="accent">´</span></td></tr>
+            <tr><td>03</td><td>Март</td><td class="case-6">в ма<span class="accent">´</span>рте</td></tr>
+            <tr><td>04</td><td>Апре<span class="accent">´</span>ль</td><td class="case-6">в апре<span class="accent">´</span>ле</td></tr>
+            <tr><td>05</td><td>Май</td><td class="case-6">в ма<span class="accent">´</span>е</td></tr>
+            <tr><td>06</td><td>Ию<span class="accent">´</span>нь</td><td class="case-6">в ию<span class="accent">´</span>не</td></tr>
+            <tr><td>07</td><td>Ию<span class="accent">´</span>ль</td><td class="case-6">в ию<span class="accent">´</span>ле</td></tr>
+            <tr><td>08</td><td>А<span class="accent">´</span>вгуст</td><td class="case-6">в а<span class="accent">´</span>вгусте</td></tr>
+            <tr><td>09</td><td>Сентя<span class="accent">´</span>брь</td><td class="case-6">в сентябре<span class="accent">´</span></td></tr>
+            <tr><td>10</td><td>Октя<span class="accent">´</span>брь</td><td class="case-6">в октябре<span class="accent">´</span></td></tr>
+            <tr><td>11</td><td>Ноя<span class="accent">´</span>брь</td><td class="case-6">в ноябре<span class="accent">´</span></td></tr>
+            <tr><td>12</td><td>Дека<span class="accent">´</span>брь</td><td class="case-6">в декабре<span class="accent">´</span></td></tr>
+        </tbody>
+    </table>
 
-            <div class="game-card">
-                <span class="q-text">Игра 2: Падеж 6 (Когда?)</span>
-                <div id="month-q-box" style="margin-bottom:15px;">Выберите правильную форму для месяца.</div>
-                <div class="options-grid" id="month-options">
-                    </div>
-                <div id="month-feedback" class="feedback"></div>
-            </div>
-
-            <h2>📚 Справочник (Tài liệu tham khảo)</h2>
-            <div id="reference-area" style="background: white; padding: 15px; border-radius: 10px;">
-                <p><i>Sinh viên có thể nhìn vào đây nếu quên từ!</i></p>
-                <div id="ref-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    </div>
-            </div>
+    <h2>🔢 2. Полный список чисел (1 – 31)</h2>
+    <div class="numbers-grid" id="full-list-container">
         </div>
 
-        <div class="side-panel">
-            <h3 style="text-align: center; color: #f1c40f;">🏆 Таблица лидеров</h3>
-            <div id="scoreboard-list"></div>
-            <div style="margin-top:20px; display:flex; gap:5px;">
-                <input type="text" id="new-student-name" style="padding:8px; border-radius:5px; border:none; width:70%;" placeholder="Имя студента...">
-                <button class="btn btn-green" style="margin:0; padding:5px 12px;" onclick="addStudent()">+</button>
-            </div>
-            <p style="font-size: 0.8em; color: #bdc3c7; margin-top: 10px;">* Nhấn (+) để cộng điểm khi SV trả lời đúng.</p>
-        </div>
+    <h2>🚀 3. Большие числа</h2>
+    <div class="numbers-grid">
+        <div class="num-card"><span class="num-label">40-й</span>Сороково<span class="accent">´</span>й</div>
+        <div class="num-card"><span class="num-label">50-й</span>Пятидеся<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">60-й</span>Шестидеся<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">70-й</span>Семидеся<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">80-й</span>Восьмидеся<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">90-й</span>Девяно<span class="accent">´</span>стый</div>
+        <div class="num-card"><span class="num-label">100-й</span>Со<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">900-й</span>Девятисо<span class="accent">´</span>тый</div>
+        <div class="num-card"><span class="num-label">2000-й</span>Двухты<span class="accent">´</span>сячный</div>
+    </div>
 
+    <div class="game-section">
+        <div style="font-size: 1.5em; color: #1a73e8; font-weight: bold; margin-bottom: 15px;">🎮 ТРЕНИРОВКА (QUIZ)</div>
+        <div class="question-box" id="q-box">Нажмите "Следующий вопрос"</div>
+        <input type="text" id="ans-input" placeholder="Введите слово..." autocomplete="off">
+        <br><br>
+        <button class="btn" onclick="checkAns()">Проверить</button>
+        <button class="btn" style="background:#28a745" onclick="loadQ()">Следующий вопрос</button>
+        <p id="feedback"></p>
     </div>
 
     <script>
-        const monthData = [
-            {c1: "Январь", c6: "в январе"}, {c1: "Февраль", c6: "в феврале"},
-            {c1: "Март", c6: "в марте"}, {c1: "Апрель", c6: "в апреле"},
-            {c1: "Май", c6: "в мае"}, {c1: "Июнь", c6: "в июне"},
-            {c1: "Июль", c6: "в июле"}, {c1: "Август", c6: "в августе"},
-            {c1: "Сентябрь", c6: "в сентябре"}, {c1: "Октябрь", c6: "в октябре"},
-            {c1: "Ноябрь", c6: "в ноябре"}, {c1: "Декабрь", c6: "в декабре"}
-        ];
-
-        const numData = {
-            1: "первый", 2: "второй", 3: "третий", 4: "четвертый", 5: "пятый",
-            10: "десятый", 20: "двадцатый", 21: "двадцать первый", 31: "тридцать первый",
-            40: "сороковой", 50: "пятидесятый", 90: "девяностый", 100: "сотый", 2000: "двухтысячный"
+        const allNumbers = {
+            1: "пе´рвый", 2: "второ´й", 3: "тре´тий", 4: "четвёртый", 5: "пя´тый",
+            6: "шесто´й", 7: "седьмо´й", 8: "восьмо´й", 9: "девя´тый", 10: "деся´тый",
+            11: "одинна´дцатый", 12: "двена´дцатый", 13: "трина´дцатый", 14: "четырна´дцатый", 15: "пятна´дцатый",
+            16: "шестна´дцатый", 17: "семна´дцатый", 18: "восемна´дцатый", 19: "девятна´дцатый", 20: "двадца´тый",
+            21: "два´дцать пе´рвый", 22: "два´дцать второ´й", 23: "два´дцать тре´тий", 24: "два´дцать четвёртый",
+            25: "два´дцать пя´тый", 26: "два´дцать шесто´й", 27: "два´дцать седьмо´й", 28: "два´дцать восьмо´й",
+            29: "два´дцать девя´тый", 30: "тридца´тый", 31: "три´дцать пе´рвый",
+            40: "сороково´й", 50: "пятидеся´тый", 60: "шестидеся´тый", 70: "семидеся´тый",
+            80: "восьмидеся´тый", 90: "девяно´стый", 100: "со´тый", 900: "девятисо´тый", 2000: "двухты´сячный"
         };
 
-        // Render Reference
-        let refHtml = "<div><b>Месяцы (C6):</b><br>";
-        monthData.forEach(m => refHtml += `${m.c1} -> ${m.c6}<br>`);
-        refHtml += "</div><div><b>Числа:</b><br>";
-        for(let k in numData) refHtml += `${k}-й: ${numData[k]}<br>`;
-        refHtml += "</div>";
-        document.getElementById('ref-content').innerHTML = refHtml;
-
-        // --- GAME 1 LOGIC ---
-        let currentNumKey = "";
-        function loadNumQ() {
-            const keys = Object.keys(numData);
-            currentNumKey = keys[Math.floor(Math.random() * keys.length)];
-            document.getElementById('num-q-box').innerText = `Как будет число "${currentNumKey}-й" словами?`;
-            document.getElementById('num-ans-input').value = "";
-            document.getElementById('num-feedback').innerText = "";
+        // Render danh sách 1-31 ra màn hình
+        const container = document.getElementById('full-list-container');
+        for (let i = 1; i <= 31; i++) {
+            container.innerHTML += `<div class="num-card"><span class="num-label">${i}-й</span>${allNumbers[i]}</div>`;
         }
 
-        function checkNumAns() {
-            const val = document.getElementById('num-ans-input').value.toLowerCase().trim().replace(/ё/g, "е");
-            const correct = numData[currentNumKey].replace(/ё/g, "е");
-            const fb = document.getElementById('num-feedback');
-            if(val === correct) { fb.innerText = "✅ Правильно!"; fb.style.color="green"; }
-            else { fb.innerText = `❌ Ошибка! Ответ: ${numData[currentNumKey]}`; fb.style.color="red"; }
+        let currentKey = 1;
+        function loadQ() {
+            const keys = Object.keys(allNumbers);
+            currentKey = keys[Math.floor(Math.random() * keys.length)];
+            document.getElementById('q-box').innerText = "Как будет число " + currentKey + "-й словами?";
+            document.getElementById('ans-input').value = "";
+            document.getElementById('feedback').innerText = "";
         }
 
-        // --- GAME 2 LOGIC ---
-        function loadMonthQ() {
-            const rand = Math.floor(Math.random() * monthData.length);
-            const quest = monthData[rand];
-            document.getElementById('month-q-box').innerHTML = `Как сказать "vào tháng ${quest.c1}"?`;
+        function checkAns() {
+            let userVal = document.getElementById('ans-input').value.toLowerCase().trim();
+            // Chuẩn hóa: bỏ dấu trọng âm và chuyển ё thành е để SV dễ gõ
+            userVal = userVal.replace(/[а́е́и́о́у́ы́э́ю́я́]/g, (m) => m[0]).replace(/ё/g, 'е');
             
-            // Generate 4 options (1 correct, 3 wrong)
-            let options = [quest.c6];
-            while(options.length < 4) {
-                let r = monthData[Math.floor(Math.random() * monthData.length)].c6;
-                if(!options.includes(r)) options.push(r);
+            let correctVal = allNumbers[currentKey].toLowerCase()
+                             .replace(/[а́е́и́о́у́ы́э́ю́я́]/g, (m) => m[0]).replace(/ё/g, 'е');
+
+            const feedback = document.getElementById('feedback');
+            if (userVal === correctVal) {
+                feedback.innerText = "✅ Правильно! Молодец!";
+                feedback.style.color = "#28a745";
+            } else {
+                feedback.innerText = "❌ Ошибка. Правильно: " + allNumbers[currentKey].replace(/´/g, '');
+                feedback.style.color = "#d93025";
             }
-            options.sort(() => Math.random() - 0.5);
-
-            const optDiv = document.getElementById('month-options');
-            optDiv.innerHTML = "";
-            options.forEach(opt => {
-                optDiv.innerHTML += `<button class="btn btn-option" onclick="checkMonthAns('${opt}', '${quest.c6}')">${opt}</button>`;
-            });
-            document.getElementById('month-feedback').innerText = "";
         }
-
-        function checkMonthAns(selected, correct) {
-            const fb = document.getElementById('month-feedback');
-            if(selected === correct) { fb.innerText = "✅ Отлично!"; fb.style.color="green"; setTimeout(loadMonthQ, 1500); }
-            else { fb.innerText = "❌ Попробуйте еще раз!"; fb.style.color="red"; }
-        }
-
-        // --- SCOREBOARD LOGIC ---
-        function addStudent() {
-            const name = document.getElementById('new-student-name').value;
-            if(!name) return;
-            const id = 'st-' + Date.now();
-            document.getElementById('scoreboard-list').innerHTML += `
-                <div class="score-item" id="${id}">
-                    <span class="score-name">${name}</span>
-                    <span class="score-val">0</span>
-                    <button class="btn btn-green" style="padding:2px 8px; margin:0;" onclick="updateScore('${id}')">+</button>
-                </div>`;
-            document.getElementById('new-student-name').value = "";
-        }
-        function updateScore(id) {
-            const el = document.querySelector(`#${id} .score-val`);
-            el.innerText = parseInt(el.innerText) + 1;
-        }
-
-        // Init
-        window.onload = () => { loadNumQ(); loadMonthQ(); };
+        window.onload = loadQ;
     </script>
 </body>
 </html>
