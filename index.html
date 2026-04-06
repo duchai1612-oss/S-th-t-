@@ -2,25 +2,25 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<title>Урок русского языка: Месяцы и Порядковые числа</title>
+<title>Полный урок: Месяцы и Порядковые числа</title>
 <style>
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; }
+    body { font-family: 'Segoe UI', Tahoma, sans-serif; line-height: 1.6; color: #333; max-width: 1100px; margin: 0 auto; padding: 20px; background-color: #f4f7f9; }
     h1 { color: #1a73e8; text-align: center; border-bottom: 3px solid #1a73e8; padding-bottom: 10px; }
     h2 { color: #d93025; border-left: 5px solid #d93025; padding-left: 10px; margin-top: 40px; }
     
     .month-table { width: 100%; border-collapse: collapse; background: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-radius: 8px; overflow: hidden; }
     .month-table th { background-color: #1a73e8; color: white; padding: 15px; }
-    .month-table td { border: 1px solid #eee; padding: 12px; text-align: left; }
+    .month-table td { border: 1px solid #eee; padding: 10px; text-align: left; }
     .accent { color: #d93025; font-weight: bold; }
     .case-6 { color: #28a745; font-weight: bold; }
 
-    .numbers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; margin-top: 20px; }
-    .num-card { background: white; padding: 12px; border-radius: 8px; border: 1px solid #dee2e6; text-align: center; }
+    .numbers-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: 20px; }
+    .num-card { background: white; padding: 12px; border-radius: 8px; border: 1px solid #dee2e6; text-align: center; font-size: 0.95em; }
     .num-label { font-weight: bold; color: #1a73e8; display: block; font-size: 1.1em; }
 
     .game-section { background: #ffffff; padding: 30px; border-radius: 20px; border: 2px solid #1a73e8; margin: 40px 0; text-align: center; }
-    .question-box { font-size: 1.3em; margin-bottom: 20px; padding: 20px; background: #e8f0fe; border-radius: 10px; min-height: 60px; display: flex; align-items: center; justify-content: center; }
-    input[type="text"] { padding: 12px; width: 300px; border: 2px solid #ced4da; border-radius: 8px; font-size: 1.1em; outline: none; }
+    .question-box { font-size: 1.3em; margin-bottom: 20px; padding: 20px; background: #e8f0fe; border-radius: 10px; min-height: 50px; display: flex; align-items: center; justify-content: center; }
+    input[type="text"] { padding: 12px; width: 320px; border: 2px solid #ced4da; border-radius: 8px; font-size: 1.1em; outline: none; }
     .btn { background: #1a73e8; color: white; border: none; padding: 12px 25px; border-radius: 8px; cursor: pointer; font-size: 1em; margin: 5px; }
     .btn:hover { background: #1557b0; }
     #feedback { margin-top: 20px; font-size: 1.2em; font-weight: bold; min-height: 30px; }
@@ -28,7 +28,7 @@
 </head>
 <body>
 
-    <h1>🇷🇺 Изучаем русский язык: Месяцы и Порядковые числа</h1>
+    <h1>🇷🇺 Русский язык: Месяцы и Порядковые числа (1-2000)</h1>
 
     <h2>📅 1. Месяцы (Падеж 6: "Когда?")</h2>
     <table class="month-table">
@@ -51,12 +51,11 @@
         </tbody>
     </table>
 
-    <h2>🔢 2. Порядковые числа (1 – 31)</h2>
-    <div class="numbers-grid">
-        <div id="list-1-31" style="display: contents;"></div>
-    </div>
+    <h2>🔢 2. Полный список чисел (1 – 31)</h2>
+    <div class="numbers-grid" id="full-list-container">
+        </div>
 
-    <h2>🚀 3. Большие порядковые числа</h2>
+    <h2>🚀 3. Большие числа</h2>
     <div class="numbers-grid">
         <div class="num-card"><span class="num-label">40-й</span>Сороково<span class="accent">´</span>й</div>
         <div class="num-card"><span class="num-label">50-й</span>Пятидеся<span class="accent">´</span>тый</div>
@@ -80,44 +79,47 @@
     </div>
 
     <script>
-        const fullNumbers = {
-            1: "первый", 2: "второй", 3: "третий", 4: "четвертый", 5: "пятый",
-            6: "шестой", 7: "седьмой", 8: "восьмой", 9: "девятый", 10: "десятый",
-            11: "одиннадцатый", 12: "двенадцатый", 13: "тринадцатый", 14: "четырнадцатый", 15: "пятнадцатый",
-            20: "двадцатый", 21: "двадцать первый", 30: "тридцатый", 31: "тридцать первый",
-            40: "сороковой", 50: "пятидесятый", 60: "шестидесятый", 70: "семидесятый", 
-            80: "восьмидесятый", 90: "девяностый", 100: "сотый", 900: "девятисотый", 2000: "двухтысячный"
+        const allNumbers = {
+            1: "пе´рвый", 2: "второ´й", 3: "тре´тий", 4: "четвёртый", 5: "пя´тый",
+            6: "шесто´й", 7: "седьмо´й", 8: "восьмо´й", 9: "девя´тый", 10: "деся´тый",
+            11: "одинна´дцатый", 12: "двена´дцатый", 13: "трина´дцатый", 14: "четырна´дцатый", 15: "пятна´дцатый",
+            16: "шестна´дцатый", 17: "семна´дцатый", 18: "восемна´дцатый", 19: "девятна´дцатый", 20: "двадца´тый",
+            21: "два´дцать пе´рвый", 22: "два´дцать второ´й", 23: "два´дцать тре´тий", 24: "два´дцать четвёртый",
+            25: "два´дцать пя´тый", 26: "два´дцать шесто´й", 27: "два´дцать седьмо´й", 28: "два´дцать восьмо´й",
+            29: "два´дцать девя´тый", 30: "тридца´тый", 31: "три´дцать пе´рвый",
+            40: "сороково´й", 50: "пятидеся´тый", 60: "шестидеся´тый", 70: "семидеся´тый",
+            80: "восьмидеся´тый", 90: "девяно´стый", 100: "со´тый", 900: "девятисо´тый", 2000: "двухты´сячный"
         };
 
-        // Render list 1-31 tự động cho gọn code HTML
-        const listDiv = document.getElementById('list-1-31');
-        for(let i=1; i<=31; i++) {
-            if(fullNumbers[i]) {
-                listDiv.innerHTML += `<div class="num-card"><span class="num-label">${i}-й</span>${fullNumbers[i]}</div>`;
-            }
+        // Render danh sách 1-31 ra màn hình
+        const container = document.getElementById('full-list-container');
+        for (let i = 1; i <= 31; i++) {
+            container.innerHTML += `<div class="num-card"><span class="num-label">${i}-й</span>${allNumbers[i]}</div>`;
         }
 
-        let currentNum = 1;
+        let currentKey = 1;
         function loadQ() {
-            const keys = Object.keys(fullNumbers);
-            currentNum = keys[Math.floor(Math.random() * keys.length)];
-            document.getElementById('q-box').innerText = "Как будет число " + currentNum + "-й словами?";
+            const keys = Object.keys(allNumbers);
+            currentKey = keys[Math.floor(Math.random() * keys.length)];
+            document.getElementById('q-box').innerText = "Как будет число " + currentKey + "-й словами?";
             document.getElementById('ans-input').value = "";
             document.getElementById('feedback').innerText = "";
         }
 
         function checkAns() {
             let userVal = document.getElementById('ans-input').value.toLowerCase().trim();
-            userVal = userVal.replace(/а́/g, 'а').replace(/е́/g, 'е').replace(/и́/g, 'и').replace(/о́/g, 'о').replace(/у́/g, 'у').replace(/ы́/g, 'ы').replace(/я́/g, 'я').replace(/ё/g, 'е');
+            // Chuẩn hóa: bỏ dấu trọng âm và chuyển ё thành е để SV dễ gõ
+            userVal = userVal.replace(/[а́е́и́о́у́ы́э́ю́я́]/g, (m) => m[0]).replace(/ё/g, 'е');
             
-            const correctVal = fullNumbers[currentNum].replace(/ё/g, 'е');
-            const feedback = document.getElementById('feedback');
+            let correctVal = allNumbers[currentKey].toLowerCase()
+                             .replace(/[а́е́и́о́у́ы́э́ю́я́]/g, (m) => m[0]).replace(/ё/g, 'е');
 
+            const feedback = document.getElementById('feedback');
             if (userVal === correctVal) {
-                feedback.innerText = "✅ Правильно!";
+                feedback.innerText = "✅ Правильно! Молодец!";
                 feedback.style.color = "#28a745";
             } else {
-                feedback.innerText = "❌ Ошибка. Ответ: " + fullNumbers[currentNum];
+                feedback.innerText = "❌ Ошибка. Правильно: " + allNumbers[currentKey].replace(/´/g, '');
                 feedback.style.color = "#d93025";
             }
         }
